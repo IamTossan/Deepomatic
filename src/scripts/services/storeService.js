@@ -1,6 +1,28 @@
 myApp.factory('storeService', ['$http', '$q', function($http, $q){
 
   // Service de gestion des données et appels API 
+  /***************** 
+   
+  format des données:
+  {
+    imageUrl: string,
+    type: string,                      // 'url' ou 'file'
+    deepomaticId: integer,             // id pour GET analyse
+    deepomaticFetched: false           // statut du GET analyse
+    analysisData: [
+      {
+        name: String,                  // nom du vetement
+        xmin: number,                  // coordonnées du cadre pour entourer le vetement
+        xmax: number,
+        ymin: number,
+        ymax: number
+      },
+      {...},
+      ...
+    ]
+  }
+
+  ******************/
 
   var settings = {
     headers: {
