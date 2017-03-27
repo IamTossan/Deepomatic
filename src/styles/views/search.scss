@@ -1,0 +1,28 @@
+.searchForm{
+  width: 40%;
+  height: 20vh;
+  border-radius: 15px;
+  opacity: 0.9;
+  margin: 25% auto;
+  background-color: #222;
+  padding: 2.5%;
+  h1{
+    text-indent: -10000px;
+    max-height: 35px;
+    margin: 0 auto;
+    max-width: 280px;
+    background: url('../images/logo_md.png') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  }
+  form{
+    margin-top: 5%;
+    img{
+      max-width: 15px;
+    }
+  }
+  
+}

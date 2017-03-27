@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <base href="/">
+
+  <link href="/styles/main.css" rel="stylesheet">
+
+
+  <title>Deepomatic</title>
+</head>
+<body>
+  
+  <div ui-view></div>
+
+
+  <!-- flash messages -------->
+  <div class="alert alert-success" role="alert">
+      <a href="#" class="alert-link" onclick="return false;">Well done! You successfully read this important alert message.</a>
+  </div>
+  <div class="alert alert-info" role="alert">
+      <a href="#" class="alert-link" onclick="return false;">Heads up! This alert needs your attention, but it's not super important.</a>
+  </div>
+  <div class="alert alert-warning" role="alert">
+      <a href="#" class="alert-link" onclick="return false;">Warning! Better check yourself, you're not looking too good.</a>
+  </div>
+  <div class="alert alert-danger" role="alert">
+      <a href="#" class="alert-link" onclick="return false;">Oh snap! Change a few things up and try submitting again.</a>
+  </div>
+
+  <script src="scripts/bundle.js"></script>
+
+</body>
+</html>

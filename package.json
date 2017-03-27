@@ -1,0 +1,26 @@
+{
+  "name": "deepomatic",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build": "gulp",
+    "dev": "gulp && gulp watch"
+  },
+  "author": "Tossan",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "wiredep": "^4.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

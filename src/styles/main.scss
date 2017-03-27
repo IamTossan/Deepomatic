@@ -1,0 +1,48 @@
+@import './../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+
+
+body{
+  background: url('../images/home_bg.jpg');
+  background-color:rgba(0,0,0,.7);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sidebar{
+  background-color: #222;
+  height: 100vh;
+  opacity: 0.7;
+  color: #ccc;
+  
+  h1{
+    text-indent: -10000px;
+    min-height: 100px;
+    background: url('../images/logo_circular.png') no-repeat center center;
+  }
+}
+
+.home{
+  height: 100vh;
+}
+
+/*********************** flash messages  ******************/
+.alert{
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    max-width: 350px;
+    
+    .alert-link{
+        font-size: 1.1em;
+        line-height: 1.7em;
+    }
+}
+
+/******************** views **************************/
+
+@import './views/search.scss';
+@import './views/analysis.scss';
