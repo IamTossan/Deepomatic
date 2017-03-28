@@ -1,11 +1,44 @@
-<div class="analysis">
-  <section>
-    <h1>result page</h1>
-    <a ui-sref="home.search" class="btn btn-default">!dev! go to search</a>
-    
-    <analysis-result item="item"></analysis-result>
+<div>
   
+  <section>
+    
+    <div class="searchBar" ng-controller="searchController">
+      <div class="row">
+        <div class="col-lg-2">
+          <h3>Deepomatic</h3>
+        </div>
+        <form name="searchForm" ng-submit="submit()" class="col-lg-5">
+          
+          <div class="input-group">
+            <input type="url" class="form-control text-right" ng-model="myUrl" ng-pattern="regex" placeholder="place url here" required/>
+            <span class="input-group-btn"><button type="submit" class="btn btn-default"><img ng-if="searchForm.$valid" src="images/send_icon.png"> Go!</button>
+            </span>
+          </div>
+        
+        </form>
 
+        <form name="uploadForm" ng-submit="submitFile()" class="col-lg-5">
+          
+            <div class="btn-group">
+              
+              <label for="myFile" class="btn btn-default text-center">{{myFile.filename || 'Upload a file'}}</label>
+              <input type="file" id="myFile" ng-model="myFile" accept=".jpg, .jpeg, .png" base-sixty-four-input class="hidden" required>
+              <span class="input-group-btn"><button type="submit" class="btn btn-default"><img ng-if="uploadForm.$valid && myFile.base64.length > 0" src="images/send_icon.png"> Go!</button>
+              </span>
+            </div>
+
+         
+        </form>
+      </div>
+      
+    <div>
+   
+  </section>
+
+  <section>
+    <div class="analysis">
+      <analysis-result item="item"></analysis-result>
+    </div>
   </section>
   
 </div>

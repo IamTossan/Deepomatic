@@ -2,7 +2,8 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
 
   return{
     scope: {
-      item: '='
+      item: '=',
+      itemType: '='
     },
     restrict: 'E',
     templateUrl: 'views/partials/analysisResult.html',
@@ -33,32 +34,30 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
           );
         } else{
           // données déjà recues avant
-          drawBoxes();
+          scope.analysisData = storeService.store[scope.item].analysisData;
+        
         }
       }
 
-      // afficher l'analyse sous forme de cadres sur l'image
+      // creer les coordonnees pour dessiner les box d'analyse
       var drawBoxes = function(){
-        scope.analysisData.forEach(function(item){
+        
+        storeService.store[scope.item].analysisData.forEach(function(item){
           var targetY = $('.analysisResult').height();
           var targetX = $('.analysisResult').width();
-          var newEl = '<div class="analysisBox '
-            + item.name
-            + '" style="top:' 
-            + (item.ymin * targetY) 
-            + 'px;left: ' 
-            + (item.xmin * targetX) 
-            + 'px;width: '
-            + ((item.xmax - item.xmin) * targetX)
-            + 'px; height: '
-            + ((item.ymax - item.ymin) * targetY)
-            + 'px;"></div>';
-          $(newEl).appendTo('.analysisResult');
+          
+          item.style = 'top: ' + item.ymin * targetY + 'px\;'
+          + 'left:' + item.xmin * targetX + 'px\;'
+          + 'width:' + (item.xmax - item.xmin) * targetX + 'px\;'
+          + 'height:' + (item.ymax - item.ymin) * targetY + 'px\;'
+                  
         });
       }
       
       
       fetchBoxes();
+      
+      
      
     }
   }

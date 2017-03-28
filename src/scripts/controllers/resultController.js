@@ -1,7 +1,8 @@
-myApp.controller('resultController', ['$scope', 'storeService', function($scope, storeService){
+myApp.controller('resultController', ['$scope', 'storeService', '$stateParams', function($scope, storeService, $stateParams){
 
   // image à affiché > hardcodé
-  $scope.item = storeService.store.length - 1;
+  $scope.item = $stateParams.id;
+
      
 
 

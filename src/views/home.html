@@ -6,8 +6,17 @@
         <a ui-sref="home.search"><h1>Deepomatic</h1></a>
         
         <ul>
-          <li>item 1</li>
-          <li>item 2</li>
+          <li ng-repeat="item in list">
+            <div>
+              
+              <div ng-click="relocate(item)">
+
+                <img class="img-responsive img-thumbnail" ng-if="item.type == 'url'" ng-src="{{item.imageUrl}}" id="targetImage"/>
+                <img class="img-responsive img-thumbnail" ng-if="item.type == 'file'" data-ng-src="data:image/png;base64,{{item.imageFile}}" id="targetImage"/>
+              </div>
+            </div>
+          </li>
+          
         </ul>
       </nav>
     </div>

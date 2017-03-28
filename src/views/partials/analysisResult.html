@@ -1,3 +1,5 @@
 <div class="analysisResult">
-  <img ng-src="{{currentItem.imageUrl}}" id="targetImage"/>
+  <img ng-if="currentItem.type == 'url'" ng-src="{{currentItem.imageUrl}}" id="targetImage"/>
+  <img ng-if="currentItem.type == 'file'" data-ng-src="data:image/png;base64,{{currentItem.imageFile}}" id="targetImage"/>
+  <div class="analysisBox" ng-repeat="item in analysisData track by $index" style="{{item.style}}"></div>
 </div>

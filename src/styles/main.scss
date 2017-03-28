@@ -22,6 +22,13 @@ body{
     min-height: 100px;
     background: url('../images/logo_circular.png') no-repeat center center;
   }
+  ul{
+    list-style-type: none;
+    padding: 0;
+    li{
+      margin: 5% auto;
+    }
+  }
 }
 
 .home{

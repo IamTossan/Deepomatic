@@ -1,16 +1,49 @@
+.searchBar{
+  width: 98%;
+  max-height: 200px;
+  border-radius: 15px;
+  opacity: 0.9;
+  margin: 2% auto;
+  background-color: #222;
+  padding: 2%;
+  h3{
+    text-indent: -10000px;
+    max-height: 35px;
+    margin: 0 auto;
+    max-width: 280px;
+    background: url('../images/logo_md.png') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  }
+  form{
+    
+    img{
+      max-width: 15px;
+    }
+    label{
+      cursor: pointer;
+    }
+  }
+  
+}
+
 .analysis{
 
   width: 98%;
   max-width: 1000px;
   
   border-radius: 15px;
-  opacity: 0.9;
+  opacity: 1;
   margin: 5% auto;
   background-color: #fff;
   padding: 2.5%;
   
   .analysisResult{
     position: relative;
+    
     img{
       width: 100%;
       
