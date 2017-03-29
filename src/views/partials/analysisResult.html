@@ -1,5 +1,22 @@
 <div class="analysisResult">
-  <img ng-if="currentItem.type == 'url'" ng-src="{{currentItem.imageUrl}}" id="targetImage"/>
-  <img ng-if="currentItem.type == 'file'" data-ng-src="data:image/png;base64,{{currentItem.imageFile}}" id="targetImage"/>
-  <div class="analysisBox" ng-repeat="item in analysisData track by $index" style="{{item.style}}"></div>
+  <img ng-if="currentItem.type == 'url'" ng-click="resetSelection()" ng-src="{{currentItem.imageUrl}}" id="targetImage"/>
+  <img ng-if="currentItem.type == 'file'" ng-click="resetSelection()" data-ng-src="data:image/png;base64,{{currentItem.imageFile}}" id="targetImage"/>
+  
+  <div class="analysisBox {{(item.state == 'selected') ? 'active ' : ' '}}{{(item.state == 'hover') ? 'hover ' : ' '}}" ng-repeat="item in analysisData track by $index" ng-click="handleClick(item)" style="{{item.style}}"></div>
+
+  <!-- Single button -->
+  <div class="btn-group boxSelector">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Items <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="item in analysisData track by $index" ng-click="handleClick(item)" ng-mouseenter="mouseEnter(item)" ng-mouseleave="mouseLeave(item)"><a href="#">{{ item.name }}</a></li>
+      
+    </ul>
+  </div>
+
+</div>
+
+<div class="alert alert-info" ng-if="selectedItem != ''">
+    <a href="#" class="alert-link" onclick="return false;">Item selected : {{ selectedItem }}</a>
 </div>

@@ -11,6 +11,7 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
       
       scope.currentItem = storeService.store[scope.item];
       scope.analysisData = [];
+      scope.selectedItem = '';
 
       // récupérer analyse > appel API de l'analyse | local(appel déjà fait)
       var fetchBoxes = function(){
@@ -45,6 +46,8 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
         storeService.store[scope.item].analysisData.forEach(function(item){
           var targetY = $('.analysisResult').height();
           var targetX = $('.analysisResult').width();
+
+          item.state = '';
           
           item.style = 'top: ' + item.ymin * targetY + 'px\;'
           + 'left:' + item.xmin * targetX + 'px\;'
@@ -56,7 +59,36 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
       
       
       fetchBoxes();
+
+      // fonctions de sélection des box
       
+      scope.handleClick = function(item){
+        scope.selectedItem = item.name;
+        scope.analysisData.forEach(function(item){
+          item.state = "";
+        });
+        item.state = "selected";
+        
+      };
+
+      scope.mouseEnter = function(item){
+        if(item.state !== "selected"){
+          item.state = "hover";
+        }
+      };
+
+      scope.mouseLeave = function(item){
+        if(item.state !== "selected"){
+          item.state = "";
+        }
+      };
+
+      scope.resetSelection = function(){
+        scope.analysisData.forEach(function(item){
+          item.state = "";
+        });
+        scope.selectedItem = "";
+      };
       
      
     }
