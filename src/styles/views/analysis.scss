@@ -25,6 +25,11 @@
     }
     label{
       cursor: pointer;
+      max-width: 200px;
+      overflow: hidden;
+      direction: rtl;
+      text-overflow: ellipsis;
+      
     }
   }
   

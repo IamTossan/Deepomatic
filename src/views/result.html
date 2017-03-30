@@ -21,7 +21,7 @@
           
             <div class="btn-group">
               
-              <label for="myFile" class="btn btn-default text-center">{{myFile.filename || 'Upload a file'}}</label>
+              <label for="myFile" class="btn btn-default text-right">{{myFile.filename || 'Upload a file'}}</label>
               <input type="file" id="myFile" ng-model="myFile" accept=".jpg, .jpeg, .png" base-sixty-four-input class="hidden" required>
               <span class="input-group-btn"><button type="submit" class="btn btn-default"><img ng-if="uploadForm.$valid && myFile.base64.length > 0" src="images/send_icon.png"> Go!</button>
               </span>

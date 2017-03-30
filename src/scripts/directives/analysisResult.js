@@ -36,6 +36,11 @@ myApp.directive('analysisResult', ['storeService', '$timeout', 'flashService', f
         } else{
           // données déjà recues avant
           scope.analysisData = storeService.store[scope.item].analysisData;
+          scope.analysisData.forEach(function(item){
+            if(item.state == "selected"){
+              scope.selectedItem = item.name;
+            }
+          });
         
         }
       }
